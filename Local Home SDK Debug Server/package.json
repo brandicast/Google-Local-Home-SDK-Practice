@@ -1,0 +1,37 @@
+{
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "@google/local-home-sdk": "^1.4.1",
+    "array.prototype.flat": "^1.2.4",
+    "ava": "^3.4.0",
+    "express": "^4.17.1",
+    "ts-loader": "^7.0.5",
+    "ts-node": "^8.10.2",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.9"
+  },
+  "scripts": {
+    "compile": "tsc --noEmit",
+    "test": "ava test.ts",
+    "lint": "tslint --project .",
+    "build": "npm run build-web && npm run build-node",
+    "build-web": "tsc --outFile dist/web/bundle.js",
+    "build-node": "tsc --outFile dist/node/bundle.js",
+    "start": "node serve.js"
+  },
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  },
+  "name": "cns",
+  "version": "1.0.0",
+  "main": "serve.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
